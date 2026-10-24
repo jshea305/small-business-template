@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Business Name] | [City, State]</title>
+    <meta name="description" content="Professional [service description] serving [City, State] and surrounding areas. Contact us for a free estimate today!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#111820',
+                            card: '#1A232A',
+                            surface: '#242F38',
+                            gold: '#D4AF37',
+                            accent: '#16a34a',
+                            accentHover: '#15803d',
+                            lightText: '#E2E8F0',
+                            muted: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-brand-dark text-brand-lightText font-sans antialiased pb-20 md:pb-0">
 
+    <!-- 1. Top Announcement / Rebrand / Service Notice Bar -->
+    <div class="bg-gradient-to-r from-brand-accent via-emerald-800 to-brand-accent text-white py-2.5 px-4 text-center text-xs md:text-sm font-medium shadow-md relative z-50">
+        <span class="bg-brand-gold text-brand-dark font-black text-[10px] uppercase px-2 py-0.5 rounded mr-2">Notice</span>
+        Serving [City, State] & Surrounding Areas! 
+        <a href="#estimate" class="underline ml-1 font-bold hover:text-brand-gold">Request Free Estimate &rarr;</a>
+    </div>
+
+    <!-- 2. Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-brand-surface/80 relative shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="bg-brand-surface p-2.5 rounded-lg border border-brand-gold/30 group-hover:border-brand-gold transition-all">
+                    <i class="fa-solid fa-briefcase text-brand-gold text-2xl"></i>
+                </div>
+                <div>
+                    <div id="brand-title" class="font-heading font-black text-lg md:text-xl tracking-tight text-white uppercase flex items-center gap-1">
+                        COMPANY <span class="text-brand-gold">NAME</span>
+                    </div>
+                    <div id="brand-subtitle" class="text-[10px] sm:text-xs font-semibold tracking-wider text-brand-muted uppercase">Primary Tagline</div>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-brand-lightText">
+                <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="#about" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="reviews.html" class="hover:text-brand-gold transition-colors">Reviews</a>
+                <a href="#estimate" class="hover:text-brand-gold transition-colors">Free Estimate</a>
+            </nav>
+            
+            <div class="hidden sm:flex items-center gap-3">
+                <a id="header-phone-link" href="tel:0000000000" class="flex items-center gap-2 bg-brand-surface hover:bg-brand-surface/80 border border-brand-gold/40 text-brand-gold px-4 py-2.5 rounded-lg font-bold text-sm transition-all shadow-sm">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span id="header-phone-text">(000) 000-0000</span>
+                </a>
+                <a href="#estimate" class="bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-md">
+                    Get Free Quote
+                </a>
+            </div>
+            
+            <button id="menu-toggle" class="lg:hidden p-2 text-brand-lightText hover:text-brand-gold focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-surface px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block py-2 text-brand-lightText hover:text-brand-gold font-medium border-b border-brand-surface/50">Services</a>
+            <a href="#about" class="block py-2 text-brand-lightText hover:text-brand-gold font-medium border-b border-brand-surface/50">About Us</a>
+            <a href="reviews.html" class="block py-2 text-brand-lightText hover:text-brand-gold font-medium border-b border-brand-surface/50">Customer Reviews</a>
+            <a href="#estimate" class="block py-2 text-brand-lightText hover:text-brand-gold font-medium border-b border-brand-surface/50">Free Estimate</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a id="mobile-phone-link" href="tel:0000000000" class="flex items-center justify-center gap-2 bg-brand-surface text-brand-gold border border-brand-gold/40 py-3 rounded-lg font-bold text-center">
+                    <i class="fa-solid fa-phone"></i> <span id="mobile-phone-text">Call (000) 000-0000</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 3. Hero Section -->
+        <section class="relative min-h-[580px] md:min-h-[640px] flex items-center justify-center bg-brand-dark py-20 px-4 text-center">
+            <div class="max-w-4xl mx-auto space-y-6 relative z-10">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold/40 text-brand-gold px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-map-pin"></i> Locally Owned & Operated
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight uppercase">
+                    Professional <span class="text-brand-gold">[Service Headline]</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg md:text-xl text-brand-lightText max-w-2xl mx-auto font-normal leading-relaxed">
+                    High-quality solutions tailored for residential and commercial clients across [City/Region].
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+                    <a href="#estimate" class="w-full sm:w-auto bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded-xl font-bold text-base transition-all shadow-lg flex items-center justify-center gap-3">
+                        <span>Request Free Estimate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a id="hero-text-link" href="sms:+10000000000" class="w-full sm:w-auto bg-brand-surface border border-slate-500 text-white px-8 py-4 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-comment-dots text-brand-gold"></i>
+                        <span>Text Us for Quick Quote</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Services Grid (Populated dynamically via js/main.js or content.json) -->
+        <section id="services" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest">Our Expertise</h2>
+                <p class="text-3xl sm:text-4xl font-heading font-extrabold text-white uppercase">Featured Services</p>
+                <p class="text-brand-muted text-sm sm:text-base">Reliable, fully insured work tailored to your property.</p>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fallback Service Card Example -->
+                <div class="bg-brand-card border border-brand-surface rounded-2xl p-6 hover:border-brand-gold/40 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-surface rounded-xl flex items-center justify-center text-brand-gold text-2xl mb-4 border border-brand-gold/20">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Primary Service</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">Detailed service description highlighting key client benefits and features.</p>
+                    </div>
+                    <a href="#estimate" class="text-brand-gold font-bold text-sm inline-flex items-center gap-2 hover:underline">Request Quote &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Fast Contact / Estimate Form -->
+        <section id="estimate" class="py-20 px-4 max-w-4xl mx-auto">
+            <div class="bg-brand-card border border-brand-surface rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="text-center space-y-3 mb-10">
+                    <h2 class="text-3xl font-heading font-extrabold text-white uppercase">Request a Free Estimate</h2>
+                    <p class="text-brand-muted text-sm">Fill out the quick form below and our team will follow up promptly.</p>
+                </div>
+                <form id="lead-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-muted uppercase mb-2">Your Full Name *</label>
+                            <input type="text" required placeholder="John Smith" class="w-full bg-brand-surface border border-brand-surface rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-muted uppercase mb-2">Phone Number *</label>
+                            <input type="tel" required placeholder="(000) 000-0000" class="w-full bg-brand-surface border border-brand-surface rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-muted uppercase mb-2">Location / ZIP Code *</label>
+                            <input type="text" required placeholder="City, State" class="w-full bg-brand-surface border border-brand-surface rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-muted uppercase mb-2">Service Requested *</label>
+                            <select required class="w-full bg-brand-surface border border-brand-surface rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold">
+                                <option value="">Select a service...</option>
+                                <option value="general">General Contracting / Service</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="consultation">Consultation</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white py-4 rounded-xl font-extrabold text-base uppercase tracking-wider transition-all shadow-lg">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. Footer -->
+    <footer class="bg-brand-dark border-t border-brand-surface py-12 px-4 text-center text-xs text-brand-muted">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="font-heading font-black text-white text-sm uppercase">[Company Name]</div>
+            <div>&copy; <span id="year"></span> All rights reserved. Servicing [Region].</div>
+        </div>
+    </footer>
+
+    <!-- 7. Mobile Sticky Quick Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 bg-brand-dark/95 border-t border-brand-surface p-3 sm:hidden grid grid-cols-2 gap-3 backdrop-blur-lg">
+        <a id="sticky-phone-link" href="tel:0000000000" class="bg-brand-surface border border-brand-gold/40 text-brand-gold font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+        <a id="sticky-sms-link" href="sms:+10000000000" class="bg-brand-accent text-white font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+            <i class="fa-solid fa-comment"></i> Text Quote
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
