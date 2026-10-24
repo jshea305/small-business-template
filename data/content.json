@@ -1,1 +1,15 @@
-
+{
+  "companyName": "Business Name",
+  "tagline": "Primary Business Tagline",
+  "phone": "(000) 000-0000",
+  "smsPhone": "+10000000000",
+  "email": "info@example.com",
+  "location": "City, State",
+  "services": [
+    {
+      "title": "Primary Service",
+      "description": "Comprehensive service description detailing features and benefits for residential and commercial customers.",
+      "icon": "fa-screwdriver-wrench"
+    }
+  ]
+}
